@@ -197,18 +197,27 @@ nav a:hover {
 }
 
 .project-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 4rem 0;
+    display: block;
     border-bottom: 1px solid rgba(242, 242, 242, 0.1);
     text-decoration: none;
     color: inherit;
     position: relative;
     will-change: transform;
+    backface-visibility: hidden;
 }
 
-.project-item:hover {
+.project-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 4rem 0;
+    width: 100%;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: background 0.4s ease;
+}
+
+.project-inner:hover {
     background: rgba(242, 242, 242, 0.02);
 }
 
@@ -219,7 +228,7 @@ nav a:hover {
     will-change: transform;
 }
 
-.project-item:hover .project-arrow {
+.project-inner:hover .project-arrow {
     opacity: 1;
 }
 
