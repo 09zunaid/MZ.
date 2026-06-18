@@ -108,6 +108,11 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     padding-top: 100px;
+    background-image: linear-gradient(rgba(13, 13, 13, 0.4), rgba(13, 13, 13, 0.65)), url('hero-bg.png');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 .hero h1 {
