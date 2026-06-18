@@ -298,10 +298,102 @@ function initCaseStudies() {
     });
 }
 
+// Floating Project Hover Previews
+function initProjectPreview() {
+    const previewCard = document.getElementById('project-preview');
+    if (!previewCard) return;
+
+    const prevGlow = previewCard.querySelector('.preview-glow');
+    const prevIndex = document.getElementById('prev-index');
+    const prevTitle = document.getElementById('prev-title');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    // Brand gradient map
+    const gradients = {
+        'black-whole': 'linear-gradient(135deg, #1f1f2e 0%, #0d0d1a 100%)',
+        'notion': 'linear-gradient(135deg, #3a3a3a 0%, #1c1c1c 100%)',
+        'axiom-studio': 'linear-gradient(135deg, #4d3d2c 0%, #1f1810 100%)',
+        'undo-card': 'linear-gradient(135deg, #0f3d3d 0%, #051414 100%)',
+        'ever-after-planners': 'linear-gradient(135deg, #4a2c3a 0%, #1a0f15 100%)',
+        'forma': 'linear-gradient(135deg, #4d1c1c 0%, #1a0a0a 100%)',
+        'cafe-encanto': 'linear-gradient(135deg, #3d2a1c 0%, #140d09 100%)',
+        'pit-stop': 'linear-gradient(135deg, #4d141a 0%, #1a0709 100%)'
+    };
+
+    projectItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const id = item.getAttribute('data-project-id');
+            const data = caseStudies[id];
+            if (!data) return;
+
+            // Populate preview details
+            prevIndex.textContent = data.index;
+            prevTitle.textContent = data.title;
+            
+            // Set dynamic background gradient
+            const grad = gradients[id] || 'linear-gradient(135deg, #222, #111)';
+            prevGlow.style.setProperty('background', grad);
+
+            // Animate card scale-in
+            gsap.to(previewCard, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.4,
+                ease: 'back.out(1.2)',
+                overwrite: 'auto'
+            });
+        });
+
+        item.addEventListener('mouseleave', () => {
+            // Animate card scale-out
+            gsap.to(previewCard, {
+                opacity: 0,
+                scale: 0.6,
+                duration: 0.3,
+                ease: 'power2.in',
+                overwrite: 'auto'
+            });
+        });
+    });
+
+    // Smooth cursor tracking with lerped follow delay
+    window.addEventListener('mousemove', (e) => {
+        gsap.to(previewCard, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.35,
+            ease: 'power3.out',
+            overwrite: 'auto'
+        });
+    });
+}
+
+// Services Grid Hover Focus states
+function initServicesInteractions() {
+    const grid = document.querySelector('.services-grid');
+    const items = document.querySelectorAll('.service-item');
+
+    if (!grid || items.length === 0) return;
+
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            grid.classList.add('has-active');
+            item.classList.add('active');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            grid.classList.remove('has-active');
+            item.classList.remove('active');
+        });
+    });
+}
+
 // GSAP Animations on DOM Load
 document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
     initCaseStudies();
+    initProjectPreview();
+    initServicesInteractions();
 
     // Reveal animations on scroll
     const reveals = document.querySelectorAll('.reveal');

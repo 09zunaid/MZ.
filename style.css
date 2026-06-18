@@ -274,11 +274,17 @@ nav a:hover {
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.4s ease;
+    transition: border-color 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, opacity;
 }
 
-.service-item:hover {
-    border-top-color: rgba(255, 255, 255, 0.3);
+.services-grid.has-active .service-item:not(.active) {
+    opacity: 0.25;
+}
+
+.service-item.active {
+    transform: translateY(-6px);
+    border-top-color: rgba(255, 255, 255, 0.35);
 }
 
 .service-num {
@@ -289,6 +295,12 @@ nav a:hover {
     display: block;
     margin-bottom: 1rem;
     letter-spacing: 0.1em;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.service-item.active .service-num {
+    transform: translateX(4px);
+    color: var(--text-color);
 }
 
 .service-name {
@@ -304,6 +316,107 @@ nav a:hover {
     line-height: 1.6;
     color: var(--accent-color);
     font-weight: 300;
+}
+
+.service-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.8rem;
+}
+
+.badge {
+    font-size: 0.72rem;
+    font-family: var(--font-main);
+    color: var(--accent-color);
+    border: 1px solid rgba(242, 242, 242, 0.12);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.service-item.active .badge {
+    border-color: rgba(242, 242, 242, 0.3);
+    color: var(--text-color);
+}
+
+/* Floating Project Hover Preview */
+.project-preview-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 380px;
+    height: 240px;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+    will-change: transform, opacity;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    background: #111;
+}
+
+.preview-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--prev-gradient, linear-gradient(135deg, #222, #111));
+    z-index: 1;
+    opacity: 0.9;
+    transition: background 0.6s ease;
+}
+
+.preview-glow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.04;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.preview-text {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.preview-index {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.1em;
+}
+
+.preview-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .project-preview-card {
+        display: none !important;
+    }
 }
 
 @media (max-width: 768px) {

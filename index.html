@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital@0;1&display=swap"
         rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css?v=1.8">
+    <link rel="stylesheet" href="style.css?v=1.9">
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- GSAP & Lenis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -160,24 +160,48 @@
                     <span class="service-num">01</span>
                     <h3 class="service-name">UI/UX Designer</h3>
                     <p class="service-desc">Crafting thoughtful user journeys, building cohesive design systems, and rendering beautiful, high-fidelity interfaces that balance form with pixel-perfect function.</p>
+                    <div class="service-badges">
+                        <span class="badge">Figma</span>
+                        <span class="badge">Design Systems</span>
+                        <span class="badge">Wireframing</span>
+                        <span class="badge">Prototyping</span>
+                    </div>
                 </div>
                 
                 <div class="service-item reveal">
                     <span class="service-num">02</span>
                     <h3 class="service-name">Front-end Developer</h3>
                     <p class="service-desc">Transforming designs into performant, responsive web apps. Focused on smooth interactions, typography scaling, fluid GSAP animations, and clean, modular code.</p>
+                    <div class="service-badges">
+                        <span class="badge">React.js</span>
+                        <span class="badge">Next.js</span>
+                        <span class="badge">GSAP Motion</span>
+                        <span class="badge">TailwindCSS</span>
+                    </div>
                 </div>
                 
                 <div class="service-item reveal">
                     <span class="service-num">03</span>
                     <h3 class="service-name">Backend Developer</h3>
                     <p class="service-desc">Architecting robust database schemas, secure REST/GraphQL API services, server-side business logic, and integrations that power complex digital products.</p>
+                    <div class="service-badges">
+                        <span class="badge">Node.js</span>
+                        <span class="badge">Express</span>
+                        <span class="badge">REST & GraphQL</span>
+                        <span class="badge">SQL & NoSQL</span>
+                    </div>
                 </div>
                 
                 <div class="service-item reveal">
                     <span class="service-num">04</span>
                     <h3 class="service-name">Full Stack Developer</h3>
                     <p class="service-desc">Bridging the gap between design and server architecture. Developing complete, end-to-end applications from database queries up to visual animations.</p>
+                    <div class="service-badges">
+                        <span class="badge">Full-Stack Builds</span>
+                        <span class="badge">System Architecture</span>
+                        <span class="badge">DevOps & Cloud</span>
+                        <span class="badge">Third-Party APIs</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -265,7 +289,16 @@
         </div>
     </div>
 
-    <script src="script.js?v=1.8"></script>
+    <!-- Floating Project Hover Preview -->
+    <div id="project-preview" class="project-preview-card">
+        <div class="preview-glow"></div>
+        <div class="preview-text">
+            <span class="preview-index" id="prev-index">01</span>
+            <h4 class="preview-title" id="prev-title">Project Title</h4>
+        </div>
+    </div>
+
+    <script src="script.js?v=1.9"></script>
 </body>
 
 </html>
