@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital@0;1&display=swap"
         rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.6">
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- GSAP & Lenis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -44,6 +44,9 @@
         </section>
 
         <section id="about" class="about">
+            <div class="section-title-wrapper reveal">
+                <span class="section-tag-num">01 / ABOUT</span>
+            </div>
             <div class="about-content">
                 <h2 class="reveal">Less is more, but <i>better</i> is everything.</h2>
                 <p class="reveal">I believe in the power of restraint. By removing the unnecessary, we create space for
@@ -53,7 +56,10 @@
         </section>
 
         <section id="work" class="projects">
-            <a href="https://blackwhole.vercel.app/" class="project-item" target="_blank">
+            <div class="section-title-wrapper reveal">
+                <span class="section-tag-num">02 / WORK</span>
+            </div>
+            <a href="https://blackwhole.vercel.app/" class="project-item" data-project-id="black-whole" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">01</span>
@@ -64,7 +70,7 @@
                 </div>
             </a>
 
-            <a href="https://notion-gilt-psi.vercel.app/" class="project-item" target="_blank">
+            <a href="https://notion-gilt-psi.vercel.app/" class="project-item" data-project-id="notion" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">02</span>
@@ -75,7 +81,7 @@
                 </div>
             </a>
 
-            <a href="https://axiomstudio.vercel.app/" class="project-item" target="_blank">
+            <a href="https://axiomstudio.vercel.app/" class="project-item" data-project-id="axiom-studio" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">03</span>
@@ -86,7 +92,7 @@
                 </div>
             </a>
 
-            <a href="https://undocard.vercel.app/" class="project-item" target="_blank">
+            <a href="https://undocard.vercel.app/" class="project-item" data-project-id="undo-card" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">04</span>
@@ -97,7 +103,7 @@
                 </div>
             </a>
 
-            <a href="https://everafterplanners.vercel.app/" class="project-item" target="_blank">
+            <a href="https://everafterplanners.vercel.app/" class="project-item" data-project-id="ever-after-planners" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">05</span>
@@ -108,7 +114,7 @@
                 </div>
             </a>
 
-            <a href="https://forma-silk.vercel.app/" class="project-item" target="_blank">
+            <a href="https://forma-silk.vercel.app/" class="project-item" data-project-id="forma" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">06</span>
@@ -119,7 +125,7 @@
                 </div>
             </a>
 
-            <a href="https://cafeencanto-ivory.vercel.app/" class="project-item" target="_blank">
+            <a href="https://cafeencanto-ivory.vercel.app/" class="project-item" data-project-id="cafe-encanto" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">07</span>
@@ -130,7 +136,7 @@
                 </div>
             </a>
 
-            <a href="https://pitstop-inky.vercel.app/" class="project-item" target="_blank">
+            <a href="https://pitstop-inky.vercel.app/" class="project-item" data-project-id="pit-stop" target="_blank">
                 <div class="project-inner">
                     <div class="project-info">
                         <span class="project-index">08</span>
@@ -144,9 +150,16 @@
 
         <section id="contact">
             <footer>
-                <a href="mailto:mohammad_zunaid@outlook.com"
-                    class="email-display reveal">mohammad_zunaid@outlook.com</a>
-                <a href="mailto:mohammad_zunaid@outlook.com" class="contact-link reveal">Let's create something
+                <div class="contact-info-block reveal">
+                    <h2 class="contact-name">MOHAMMAD ZUNAID</h2>
+                    <p class="contact-role">UI/UX Designer | Web Developer</p>
+                    <p class="contact-details">
+                        Tirupati, AP, INDIA • 
+                        <a href="mailto:zunaidshaik48@gmail.com">zunaidshaik48@gmail.com</a> • 
+                        <a href="tel:+917569370322">+91 7569370322</a>
+                    </p>
+                </div>
+                <a href="mailto:zunaidshaik48@gmail.com" class="contact-link reveal">Let's create something
                     together.</a>
                 <div class="footer-bottom">
                     <p>© 2026 Mohammad Zunaid</p>
@@ -156,7 +169,69 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Case Study Drawer -->
+    <div id="case-study-drawer" class="drawer">
+        <div class="drawer-backdrop" id="drawer-backdrop"></div>
+        <div class="drawer-content-wrapper">
+            <button class="drawer-close" aria-label="Close Case Study" id="drawer-close">
+                <span class="close-icon">&times;</span>
+                <span class="close-text">Close</span>
+            </button>
+            <div class="drawer-content" data-lenis-prevent>
+                <div class="drawer-header">
+                    <span class="drawer-index" id="cs-index">01</span>
+                    <h2 class="drawer-title" id="cs-title">Project Title</h2>
+                    <p class="drawer-subtitle" id="cs-subtitle">Subheading description</p>
+                </div>
+                
+                <div class="drawer-meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value" id="cs-role">Lead Developer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Timeline</span>
+                        <span class="meta-value" id="cs-timeline">8 Weeks</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Services</span>
+                        <span class="meta-value" id="cs-services">Creative Development</span>
+                    </div>
+                </div>
+
+                <div class="drawer-body">
+                    <div class="drawer-section">
+                        <h3>Overview</h3>
+                        <p id="cs-overview">Overview text here.</p>
+                    </div>
+                    <div class="drawer-section">
+                        <h3>The Challenge</h3>
+                        <p id="cs-challenge">Challenge text here.</p>
+                    </div>
+                    <div class="drawer-section">
+                        <h3>The Solution</h3>
+                        <p id="cs-solution">Solution text here.</p>
+                    </div>
+                    <div class="drawer-section">
+                        <h3>Key Deliverables</h3>
+                        <ul id="cs-deliverables">
+                            <li>Deliverable 1</li>
+                            <li>Deliverable 2</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="drawer-footer">
+                    <a href="#" class="launch-btn" id="cs-link" target="_blank">
+                        <span>Launch Live Project</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=1.6"></script>
 </body>
 
 </html>

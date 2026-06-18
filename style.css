@@ -18,7 +18,6 @@ body {
     font-family: var(--font-main);
     overflow-x: hidden;
     line-height: 1.5;
-    cursor: none;
     opacity: 0;
 }
 
@@ -41,22 +40,7 @@ body::after {
     background-image: url('https://grainy-gradients.vercel.app/noise.svg');
 }
 
-/* Custom Cursor */
-.custom-cursor {
-    width: 10px;
-    height: 10px;
-    background-color: var(--text-color);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.3s ease;
-}
 
-.custom-cursor.active {
-    transform: scale(6);
-}
 
 .container {
     width: 90%;
@@ -170,9 +154,33 @@ nav a:hover {
     }
 }
 
+/* Shared Section Headers */
+.section-title-wrapper {
+    margin-bottom: 3.5rem;
+}
+
+.section-tag-num {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
 /* About */
 .about {
-    padding: 15rem 0;
+    padding: 10rem 0 7rem;
 }
 
 .about-content {
@@ -193,7 +201,7 @@ nav a:hover {
 
 /* Projects */
 .projects {
-    padding: 10rem 0;
+    padding: 7rem 0;
 }
 
 .project-item {
@@ -265,19 +273,45 @@ footer {
 .contact-link:hover {
     opacity: 0.6;
 }
-
-.email-display {
-    display: inline-block;
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: var(--accent-color);
-    margin-bottom: 2rem;
-    font-family: var(--font-main);
-    transition: color 0.3s ease;
+.contact-info-block {
+    margin-bottom: 4rem;
 }
 
-.email-display:hover {
+.contact-name {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-family: var(--font-serif);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
     color: var(--text-color);
+}
+
+.contact-role {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 300;
+}
+
+.contact-details {
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    color: var(--accent-color);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+.contact-details a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(242, 242, 242, 0.2);
+    padding-bottom: 2px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--text-color);
+    border-bottom-color: var(--text-color);
 }
 
 .footer-bottom {
@@ -313,3 +347,295 @@ html.lenis {
     transform: translateY(30px);
     will-change: transform, opacity;
 }
+
+/* Case Study Drawer Styles */
+:root {
+    --cs-accent: #a6a6a6;
+    --cs-bg: #0f0f0f;
+    --cs-border: rgba(255, 255, 255, 0.08);
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.drawer.open {
+    pointer-events: all;
+}
+
+.drawer-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    opacity: 0;
+    z-index: 1;
+}
+
+.drawer-content-wrapper {
+    width: 65vw;
+    max-width: 850px;
+    height: 100%;
+    background: var(--cs-bg);
+    border-left: 1px solid var(--cs-border);
+    position: relative;
+    z-index: 2;
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.6);
+}
+
+.drawer-close {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 2.5rem 3rem 1.5rem;
+    align-self: flex-end;
+    outline: none;
+    z-index: 10;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.drawer-close:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.drawer-close .close-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.drawer-content {
+    padding: 0 5rem 5rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cs-accent) transparent;
+}
+
+/* Custom Webkit Scrollbar */
+.drawer-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.drawer-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.drawer-content::-webkit-scrollbar-thumb {
+    background: var(--cs-border);
+    border-radius: 2px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb:hover {
+    background: var(--cs-accent);
+}
+
+/* Header Content */
+.drawer-header {
+    margin-bottom: 3rem;
+}
+
+.drawer-index {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--cs-accent);
+    display: block;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+    letter-spacing: 0.1em;
+}
+
+.drawer-title {
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.drawer-subtitle {
+    font-size: 0.85rem;
+    color: var(--cs-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+
+/* Meta Grid */
+.drawer-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--cs-border);
+    border-bottom: 1px solid var(--cs-border);
+    margin-bottom: 4rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--cs-accent);
+    opacity: 0.5;
+}
+
+.meta-value {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+/* Body Content */
+.drawer-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.drawer-section h3 {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--cs-accent);
+    margin-bottom: 1.2rem;
+}
+
+.drawer-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(242, 242, 242, 0.8);
+    font-weight: 300;
+}
+
+.drawer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.drawer-section ul li {
+    font-size: 1.05rem;
+    color: rgba(242, 242, 242, 0.8);
+    font-weight: 300;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.drawer-section ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--cs-accent);
+    font-weight: 400;
+}
+
+/* Footer Section */
+.drawer-footer {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--cs-border);
+}
+
+.launch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 1.2rem 2.8rem;
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+}
+
+.launch-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+.launch-btn .btn-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.4s ease;
+}
+
+.launch-btn:hover .btn-arrow {
+    transform: translateX(6px);
+}
+
+/* Responsive Drawer adjustments */
+@media (max-width: 1024px) {
+    .drawer-content-wrapper {
+        width: 80vw;
+    }
+    .drawer-content {
+        padding: 0 4rem 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .drawer-content-wrapper {
+        width: 100vw;
+        border-left: none;
+    }
+    .drawer-content {
+        padding: 0 2.5rem 3.5rem;
+    }
+    .drawer-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        margin-bottom: 3rem;
+    }
+    .drawer-close {
+        padding: 2rem 2rem 1rem;
+    }
+    .drawer-body {
+        gap: 2.5rem;
+    }
+    .launch-btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
