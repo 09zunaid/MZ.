@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital@0;1&display=swap"
         rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css?v=2.0">
+    <link rel="stylesheet" href="style.css?v=1.8">
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- GSAP & Lenis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -26,154 +26,180 @@
         <nav>
             <ul>
                 <li><a href="#work">Work</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section class="hero">
-            <div class="container">
-                <h1 class="reveal">Architecting<br><i>Digital</i> Soul</h1>
-                <p class="hero-sub reveal">A minimalist showcase of curated web design experiences. Focused on aesthetic
-                    typography, fluid motion, and purposeful interactions.</p>
-                <div class="scroll-indicator reveal">
-                    <span>Scroll to explore</span>
-                    <div class="line"></div>
-                </div>
+            <h1 class="reveal">Architecting<br><i>Digital</i> Soul</h1>
+            <p class="hero-sub reveal">A minimalist showcase of curated web design experiences. Focused on aesthetic
+                typography, fluid motion, and purposeful interactions.</p>
+            <div class="scroll-indicator reveal">
+                <span>Scroll to explore</span>
+                <div class="line"></div>
             </div>
         </section>
 
         <section id="about" class="about">
-            <div class="container">
-                <div class="section-title-wrapper reveal">
-                    <span class="section-tag-num">01 / ABOUT</span>
-                </div>
-                <div class="about-content">
-                    <h2 class="reveal">Less is more, but <i>better</i> is everything.</h2>
-                    <p class="reveal">I believe in the power of restraint. By removing the unnecessary, we create space for
-                        the essential. My work is a search for balance between form and function, where every pixel has a
-                        path and every motion has a meaning.</p>
-                </div>
+            <div class="section-title-wrapper reveal">
+                <span class="section-tag-num">01 / ABOUT</span>
+            </div>
+            <div class="about-content">
+                <h2 class="reveal">Less is more, but <i>better</i> is everything.</h2>
+                <p class="reveal">I believe in the power of restraint. By removing the unnecessary, we create space for
+                    the essential. My work is a search for balance between form and function, where every pixel has a
+                    path and every motion has a meaning.</p>
             </div>
         </section>
 
         <section id="work" class="projects">
-            <div class="container">
-                <div class="section-title-wrapper reveal">
-                    <span class="section-tag-num">02 / WORK</span>
+            <div class="section-title-wrapper reveal">
+                <span class="section-tag-num">02 / WORK</span>
+            </div>
+            <a href="https://blackwhole.vercel.app/" class="project-item" data-project-id="black-whole" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">01</span>
+                        <h2>Black Whole</h2>
+                        <p>Digital Experience Studio</p>
+                    </div>
+                    <div class="project-arrow">→</div>
                 </div>
-                <a href="https://blackwhole.vercel.app/" class="project-item" data-project-id="black-whole" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">01</span>
-                            <h2>Black Whole</h2>
-                            <p>Digital Experience Studio</p>
-                        </div>
-                        <div class="project-arrow">→</div>
-                    </div>
-                </a>
+            </a>
 
-                <a href="https://notion-gilt-psi.vercel.app/" class="project-item" data-project-id="notion" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">02</span>
-                            <h2>Notion</h2>
-                            <p>Productivity Reimagined</p>
-                        </div>
-                        <div class="project-arrow">→</div>
+            <a href="https://notion-gilt-psi.vercel.app/" class="project-item" data-project-id="notion" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">02</span>
+                        <h2>Notion</h2>
+                        <p>Productivity Reimagined</p>
                     </div>
-                </a>
+                    <div class="project-arrow">→</div>
+                </div>
+            </a>
 
-                <a href="https://axiomstudio.vercel.app/" class="project-item" data-project-id="axiom-studio" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">03</span>
-                            <h2>Axiom Studio</h2>
-                            <p>Architectural Design Partner</p>
-                        </div>
-                        <div class="project-arrow">→</div>
+            <a href="https://axiomstudio.vercel.app/" class="project-item" data-project-id="axiom-studio" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">03</span>
+                        <h2>Axiom Studio</h2>
+                        <p>Architectural Design Partner</p>
                     </div>
-                </a>
+                    <div class="project-arrow">→</div>
+                </div>
+            </a>
 
-                <a href="https://undocard.vercel.app/" class="project-item" data-project-id="undo-card" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">04</span>
-                            <h2>Undo Card</h2>
-                            <p>Modern Financial Tools</p>
-                        </div>
-                        <div class="project-arrow">→</div>
+            <a href="https://undocard.vercel.app/" class="project-item" data-project-id="undo-card" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">04</span>
+                        <h2>Undo Card</h2>
+                        <p>Modern Financial Tools</p>
                     </div>
-                </a>
+                    <div class="project-arrow">→</div>
+                </div>
+            </a>
 
-                <a href="https://everafterplanners.vercel.app/" class="project-item" data-project-id="ever-after-planners" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">05</span>
-                            <h2>Ever After Planners</h2>
-                            <p>Premiere Event Planning</p>
-                        </div>
-                        <div class="project-arrow">→</div>
+            <a href="https://everafterplanners.vercel.app/" class="project-item" data-project-id="ever-after-planners" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">05</span>
+                        <h2>Ever After Planners</h2>
+                        <p>Premiere Event Planning</p>
                     </div>
-                </a>
+                    <div class="project-arrow">→</div>
+                </div>
+            </a>
 
-                <a href="https://forma-silk.vercel.app/" class="project-item" data-project-id="forma" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">06</span>
-                            <h2>Forma</h2>
-                            <p>Digital Core Design</p>
-                        </div>
-                        <div class="project-arrow">→</div>
+            <a href="https://forma-silk.vercel.app/" class="project-item" data-project-id="forma" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">06</span>
+                        <h2>Forma</h2>
+                        <p>Digital Core Design</p>
                     </div>
-                </a>
+                    <div class="project-arrow">→</div>
+                </div>
+            </a>
 
-                <a href="https://cafeencanto-ivory.vercel.app/" class="project-item" data-project-id="cafe-encanto" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">07</span>
-                            <h2>Cafe Encanto</h2>
-                            <p>Magical Coffee Experience</p>
-                        </div>
-                        <div class="project-arrow">→</div>
+            <a href="https://cafeencanto-ivory.vercel.app/" class="project-item" data-project-id="cafe-encanto" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">07</span>
+                        <h2>Cafe Encanto</h2>
+                        <p>Magical Coffee Experience</p>
                     </div>
-                </a>
+                    <div class="project-arrow">→</div>
+                </div>
+            </a>
 
-                <a href="https://pitstop-inky.vercel.app/" class="project-item" data-project-id="pit-stop" target="_blank">
-                    <div class="project-inner">
-                        <div class="project-info">
-                            <span class="project-index">08</span>
-                            <h2>Pit Stop</h2>
-                            <p>F1 Analytics Portal</p>
-                        </div>
-                        <div class="project-arrow">→</div>
+            <a href="https://pitstop-inky.vercel.app/" class="project-item" data-project-id="pit-stop" target="_blank">
+                <div class="project-inner">
+                    <div class="project-info">
+                        <span class="project-index">08</span>
+                        <h2>Pit Stop</h2>
+                        <p>F1 Analytics Portal</p>
                     </div>
-                </a>
+                    <div class="project-arrow">→</div>
+                </div>
+            </a>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="section-title-wrapper reveal">
+                <span class="section-tag-num">03 / SERVICES</span>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-item reveal">
+                    <span class="service-num">01</span>
+                    <h3 class="service-name">UI/UX Designer</h3>
+                    <p class="service-desc">Crafting thoughtful user journeys, building cohesive design systems, and rendering beautiful, high-fidelity interfaces that balance form with pixel-perfect function.</p>
+                </div>
+                
+                <div class="service-item reveal">
+                    <span class="service-num">02</span>
+                    <h3 class="service-name">Front-end Developer</h3>
+                    <p class="service-desc">Transforming designs into performant, responsive web apps. Focused on smooth interactions, typography scaling, fluid GSAP animations, and clean, modular code.</p>
+                </div>
+                
+                <div class="service-item reveal">
+                    <span class="service-num">03</span>
+                    <h3 class="service-name">Backend Developer</h3>
+                    <p class="service-desc">Architecting robust database schemas, secure REST/GraphQL API services, server-side business logic, and integrations that power complex digital products.</p>
+                </div>
+                
+                <div class="service-item reveal">
+                    <span class="service-num">04</span>
+                    <h3 class="service-name">Full Stack Developer</h3>
+                    <p class="service-desc">Bridging the gap between design and server architecture. Developing complete, end-to-end applications from database queries up to visual animations.</p>
+                </div>
             </div>
         </section>
 
         <section id="contact">
-            <div class="container">
-                <footer>
-                    <div class="contact-info-block reveal">
-                        <h2 class="contact-name">MOHAMMAD ZUNAID</h2>
-                        <p class="contact-role">UI/UX Designer | Web Developer</p>
-                        <p class="contact-details">
-                            Tirupati, AP, INDIA • 
-                            <a href="mailto:zunaidshaik48@gmail.com">zunaidshaik48@gmail.com</a> • 
-                            <a href="tel:+917569370322">+91 7569370322</a>
-                        </p>
-                    </div>
-                    <a href="mailto:zunaidshaik48@gmail.com" class="contact-link reveal">Let's create something
-                        together.</a>
-                    <div class="footer-bottom">
-                        <p>© 2026 Mohammad Zunaid</p>
-                        <p>Built with Passion & Minimalist Soul</p>
-                    </div>
-                </footer>
-            </div>
+            <footer>
+                <div class="contact-info-block reveal">
+                    <h2 class="contact-name">MOHAMMAD ZUNAID</h2>
+                    <p class="contact-role">UI/UX Designer | Web Developer</p>
+                    <p class="contact-details">
+                        Tirupati, AP, INDIA • 
+                        <a href="mailto:zunaidshaik48@gmail.com">zunaidshaik48@gmail.com</a> • 
+                        <a href="tel:+917569370322">+91 7569370322</a>
+                    </p>
+                </div>
+                <a href="mailto:zunaidshaik48@gmail.com" class="contact-link reveal">Let's create something
+                    together.</a>
+                <div class="footer-bottom">
+                    <p>© 2026 Mohammad Zunaid</p>
+                    <p>Built with Passion & Minimalist Soul</p>
+                </div>
+            </footer>
         </section>
     </main>
 
@@ -239,7 +265,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=2.0"></script>
+    <script src="script.js?v=1.8"></script>
 </body>
 
 </html>
