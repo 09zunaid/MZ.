@@ -108,6 +108,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     padding-top: 100px;
+    background: linear-gradient(to right, rgba(13, 13, 13, 0.95) 20%, rgba(13, 13, 13, 0.5) 60%, rgba(13, 13, 13, 0.2) 100%), url('hero-bg.png') no-repeat right center / cover;
 }
 
 .hero h1 {
@@ -618,6 +619,9 @@ html.lenis {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        background: linear-gradient(to top, rgba(13, 13, 13, 0.95) 45%, rgba(13, 13, 13, 0.6) 100%), url('hero-bg.png') no-repeat center center / cover;
+    }
     .drawer-content-wrapper {
         width: 100vw;
         border-left: none;
