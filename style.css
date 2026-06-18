@@ -836,4 +836,95 @@ html.lenis {
         width: 100%;
         justify-content: space-between;
     }
+}
+
+/* Tablet Layout Adjustments */
+@media (max-width: 768px) {
+    header {
+        height: 80px;
+    }
+    nav ul {
+        gap: 1.2rem;
+    }
+    nav a {
+        font-size: 0.8rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    .about {
+        padding: 6rem 0 4rem;
+    }
+    .projects {
+        padding: 4rem 0;
+    }
+    .project-inner {
+        padding: 2.5rem 0;
+    }
+    .services-section {
+        padding: 5rem 0;
+    }
+    footer {
+        padding: 6rem 0 3rem;
+    }
+    .contact-link {
+        margin-bottom: 2.5rem;
+    }
+    .contact-info-block {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Small Mobile Layout Adjustments */
+@media (max-width: 480px) {
+    header {
+        height: 70px;
+        padding: 0 4%;
+    }
+    nav ul {
+        gap: 0.8rem;
+    }
+    nav a {
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+    }
+    .logo {
+        font-size: 1.15rem;
+    }
+    .hero-container {
+        padding-top: 40px;
+    }
+    .hero-sub {
+        margin-bottom: 2.5rem;
+    }
+    .about {
+        padding: 4rem 0 3rem;
+    }
+    .projects {
+        padding: 3rem 0;
+    }
+    .project-inner {
+        padding: 1.8rem 0;
+    }
+    .project-info h2 {
+        font-size: 1.6rem;
+    }
+    .services-section {
+        padding: 4rem 0;
+    }
+    .services-grid {
+        gap: 2.5rem;
+    }
+    .drawer-content {
+        padding: 0 1.5rem 2.5rem;
+    }
+    .section-title-wrapper {
+        margin-bottom: 2.5rem;
+    }
+    footer {
+        padding: 4rem 0 2rem;
+    }
+    .contact-link {
+        margin-bottom: 2rem;
+    }
 }
