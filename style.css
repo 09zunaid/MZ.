@@ -76,6 +76,9 @@ header {
     font-family: var(--font-serif);
     font-size: 1.5rem;
     letter-spacing: -0.05em;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 nav ul {

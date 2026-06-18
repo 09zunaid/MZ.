@@ -335,12 +335,22 @@ document.addEventListener('DOMContentLoaded', () => {
         delay: 0.5
     });
 
-    // Logo hover micro-animation
+    // Logo hover & click smooth scroll to top
     const logo = document.querySelector('.logo');
     logo.addEventListener('mouseenter', () => {
         gsap.to(logo, { scale: 1.1, duration: 0.3, ease: 'back.out(2)' });
     });
     logo.addEventListener('mouseleave', () => {
         gsap.to(logo, { scale: 1, duration: 0.3, ease: 'power2.out' });
+    });
+    logo.addEventListener('click', (e) => {
+        e.preventDefault();
+        // If a case study drawer is open, close it first
+        const drawer = document.getElementById('case-study-drawer');
+        if (drawer && drawer.classList.contains('open')) {
+            const closeBtn = document.getElementById('drawer-close');
+            if (closeBtn) closeBtn.click();
+        }
+        lenis.scrollTo(0, { duration: 1.2 });
     });
 });
